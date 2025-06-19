@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import {useMemo,useState} from "react";
 import { initialItems } from "@/utils";
 
 export default function Home() {
@@ -8,6 +8,9 @@ export default function Home() {
   const [isAutoClicking, setIsAutoClicking] = useState(false);
 
   const selectedItem = items.find((item) => item.isSelected);
+  // const selectedItem = useMemo(()=>{
+  //   return items.find((item)=>item.isSelected);
+  // }, [items]);
 
   const handleAutoIncrement = () => {
     if (isAutoClicking) return;
