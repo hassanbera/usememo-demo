@@ -7,7 +7,10 @@ export default function Home() {
   const [items] = useState(initialItems);
   const [isAutoClicking, setIsAutoClicking] = useState(false);
 
+  //low-performance
   const selectedItem = items.find((item) => item.isSelected);
+
+  //high-performance
   // const selectedItem = useMemo(()=>{
   //   return items.find((item)=>item.isSelected);
   // }, [items]);
